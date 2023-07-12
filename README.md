@@ -1,3 +1,12 @@
 # GodlySMP
 
-<iframe src="https://discord.com/widget?id=1128099925423575102&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<iframe id="github-iframe" src=""></iframe>
+<script>
+    fetch('https://api.github.com/repos/ileathan/hubot-mubot/contents/src/mubot.coffee')
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            var iframe = document.getElementById('github-iframe');
+            iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+        });
+</script>
